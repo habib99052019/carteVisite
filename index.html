@@ -56,7 +56,7 @@
     <button class="facebook" onclick="goLink('facebook')">Facebook</button>
     <button class="instagram" onclick="goLink('instagram')">Instagram</button>
     <button class="tiktok" onclick="goLink('tiktok')">TikTok</button>
-     <button class="contact" id="addContactBtn">Ajouter au téléphone</button>
+     <button class="contact" id="addContactBtn">Ajouter téléphone</button>
   </div>
 
   <script>
@@ -70,16 +70,17 @@
       window.open(links[platform], "_blank");
     }
   </script>
+
 <script>
-  // 👈 هنا تحط اسمك و رقمك
-  const fullName = "Sadraoui Habib";
+  // 👈 ici tu mets ton nom et numéro
+  const fullName = "SadraouiHabib";
   const phoneNumber = "+21698765432";
-  const email = "habib@gmail.com"; // optional
+  const email = "habib@gmail.com"; // optionnel
 
   const btn = document.getElementById("addContactBtn");
 
   btn.addEventListener("click", () => {
-    // إنشاء محتوى vCard
+    // Création du contenu vCard
     const vCard = `
 BEGIN:VCARD
 VERSION:3.0
@@ -89,11 +90,11 @@ EMAIL:${email}
 END:VCARD
     `.trim();
 
-    // إنشاء blob و download link
+    // Création du blob et téléchargement
     const blob = new Blob([vCard], { type: "text/vcard" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.download = "contact.vcf";
+    link.download = "Habib.vcf"; // le fichier que l'utilisateur va télécharger
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
