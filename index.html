@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suivez-nous</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      width: 90%;
+      max-width: 350px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px 0;
+      color: white;
+      font-weight: bold;
+    }
+
+    .facebook { background: #1877f2; }
+    .instagram { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); }
+    .tiktok { background: #010101; }
+      .contact { background:#28a745; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Suivez-nous !</h2>
+
+    <button class="facebook" onclick="goLink('facebook')">Facebook</button>
+    <button class="instagram" onclick="goLink('instagram')">Instagram</button>
+    <button class="tiktok" onclick="goLink('tiktok')">TikTok</button>
+     <button class="contact" id="addContactBtn">Ajouter au téléphone</button>
+  </div>
+
+  <script>
+    const links = {
+      facebook: "https://facebook.com/TA.PAGE",
+      instagram: "https://instagram.com/TA.PAGE",
+      tiktok: "https://tiktok.com/@TA.PAGE"
+    };
+
+    function goLink(platform) {
+      window.open(links[platform], "_blank");
+    }
+  </script>
+<script>
+  // 👈 هنا تحط اسمك و رقمك
+  const fullName = "Sadraoui Habib";
+  const phoneNumber = "+21698765432";
+  const email = "habib@gmail.com"; // optional
+
+  const btn = document.getElementById("addContactBtn");
+
+  btn.addEventListener("click", () => {
+    // إنشاء محتوى vCard
+    const vCard = `
+BEGIN:VCARD
+VERSION:3.0
+FN:${fullName}
+TEL;TYPE=CELL:${phoneNumber}
+EMAIL:${email}
+END:VCARD
+    `.trim();
+
+    // إنشاء blob و download link
+    const blob = new Blob([vCard], { type: "text/vcard" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "contact.vcf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+</script>
+</body>
+</html>
