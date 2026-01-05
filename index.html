@@ -56,7 +56,7 @@
     <button class="facebook" onclick="goLink('facebook')">Facebook</button>
     <button class="instagram" onclick="goLink('instagram')">Instagram</button>
     <button class="tiktok" onclick="goLink('tiktok')">TikTok</button>
-     <button class="contact" id="addContactBtn">Ajouter téléphone</button>
+     <button class="contact" id="addContactBtn">Ajouter au téléphone</button>
   </div>
 
   <script>
@@ -73,9 +73,9 @@
 
 <script>
   // 👈 ici tu mets ton nom et numéro
-  const fullName = "kamel";
+  const fullName = "kameel";
   const phoneNumber = "+2132";
-  const email = "kamel@gmail.com"; // optionnel
+  const email = "kameel@gmail.com"; // optionnel
 
   const btn = document.getElementById("addContactBtn");
 
@@ -94,7 +94,7 @@ END:VCARD
     const blob = new Blob([vCard], { type: "text/vcard" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.download = "Habib.vcf"; // le fichier que l'utilisateur va télécharger
+    link.download = "kamel.vcf"; // le fichier que l'utilisateur va télécharger
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
