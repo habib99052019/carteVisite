@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Suivez-nous</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     body {
@@ -46,6 +48,22 @@
     .instagram { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); }
     .tiktok { background: #010101; }
       .contact { background:#28a745; }
+    .WhatsApp { background:#25D366; }
+    .website { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
+    .GoogleReview{
+  background: linear-gradient(
+    45deg,
+    #4285F4,
+    #34A853,
+    #FBBC05,
+    #EA4335
+  );
+
+}
+.Phone{
+  background:#34C759; /* Apple call green */
+
+}
   </style>
 </head>
 <body>
@@ -53,17 +71,30 @@
   <div class="card">
     <h2>Suivez-nous !</h2>
 
-    <button class="facebook" onclick="goLink('facebook')">Facebook</button>
-    <button class="instagram" onclick="goLink('instagram')">Instagram</button>
-    <button class="tiktok" onclick="goLink('tiktok')">TikTok</button>
-     <button class="contact" id="addContactBtn">Ajouter au téléphone</button>
+    <button class="facebook" onclick="goLink('facebook')"><i class="fab fa-facebook-f"></i> Abonnez sur Facebook</button>
+    <button class="instagram" onclick="goLink('instagram')"> <i class="fab fa-instagram"></i> Abonnez sur Instagram</button>
+    <button class="tiktok" onclick="goLink('tiktok')"><i class="fab fa-tiktok"></i>  Abonnez sur TikTok</button> 
+   <button class="WhatsApp"  onclick="goLink('watshapp')"> <i class="fab fa-whatsapp"></i>  WhatsApp </button>
+   <button class="website"  onclick="goLink('website')">     <i class="fas fa-globe"></i>
+  Vister nos Site Web </button>
+<button class="Phone"id="addContactBtn">
+  <i class="fas fa-phone"></i> Ajouter au téléphone
+</button>
+
+<button class="GoogleReview" onclick="goLink('google')">
+  <i class="fab fa-google"></i> Donner votre avis
+</button>
+
   </div>
 
   <script>
     const links = {
       facebook: "https://facebook.com/TA.PAGE",
       instagram: "https://instagram.com/TA.PAGE",
-      tiktok: "https://tiktok.com/@TA.PAGE"
+      tiktok: "https://tiktok.com/@TA.PAGE",
+      watshapp:"https://wa.me/+21652307723?text=Bonjour%20je%20souhaite%20plus%20d'informations",
+      website :"",
+      google:""
     };
 
     function goLink(platform) {
