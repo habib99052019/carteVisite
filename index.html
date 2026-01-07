@@ -5,33 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Suivez-nous</title>
+ =
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+   html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-      width: 90%;
-      max-width: 350px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh; /* 🔥 important pour mobile */
+}
+.company-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a73e8;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 350px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
 
-    h2 {
-      margin-bottom: 20px;
-    }
+/* Boutons plus compacts */
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 6px 0;
+  color: white;
+  font-weight: bold;
+}
 
+/* 📱 Optimisation mobile */
+@media (max-height: 700px) {
+  .card {
+    padding: 16px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  h2 {
+    margin-bottom: 12px;
+    font-size: 18px;
+  }
+}
     button {
       width: 100%;
       padding: 14px;
@@ -48,7 +86,7 @@
     .instagram { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); }
     .tiktok { background: #010101; }
       .contact { background:#28a745; }
-    .WhatsApp { background:#25D366; }
+    .WhatsApp  { background:#25D366; }
     .website { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
     .GoogleReview{
   background: linear-gradient(
@@ -64,19 +102,25 @@
   background:#34C759; /* Apple call green */
 
 }
+.map{
+  background: #1a73e8; /* Apple call green */
+
+}
   </style>
 </head>
 <body>
 
   <div class="card">
     <h2>Suivez-nous !</h2>
-
-    <button class="facebook" onclick="goLink('facebook')"><i class="fab fa-facebook-f"></i> Abonnez sur Facebook</button>
-    <button class="instagram" onclick="goLink('instagram')"> <i class="fab fa-instagram"></i> Abonnez sur Instagram</button>
-    <button class="tiktok" onclick="goLink('tiktok')"><i class="fab fa-tiktok"></i>  Abonnez sur TikTok</button> 
+ <p class="company-name">Performance Digitale</p>
+    <button class="facebook" onclick="goLink('facebook')"><i class="fab fa-facebook-f"></i> Abonnez-vous sur Facebook</button>
+    <button class="instagram" onclick="goLink('instagram')"> <i class="fab fa-instagram"></i> Abonnez-vous sur Instagram</button>
+    <button class="tiktok" onclick="goLink('tiktok')"><i class="fab fa-tiktok"></i> Abonnez-vous sur  TikTok</button> 
    <button class="WhatsApp"  onclick="goLink('watshapp')"> <i class="fab fa-whatsapp"></i>  WhatsApp </button>
    <button class="website"  onclick="goLink('website')">     <i class="fas fa-globe"></i>
-  Vister nos Site Web </button>
+  Visiter notre site web </button>
+    <button class="map" onclick="openMap()">      <i class="fa-solid fa-location-dot"></i>
+ Nous localiser </button>
 <button class="Phone"id="addContactBtn">
   <i class="fas fa-phone"></i> Ajouter au téléphone
 </button>
@@ -130,6 +174,14 @@ END:VCARD
     link.click();
     document.body.removeChild(link);
   });
+</script>
+<script>
+  function openMap() {
+    window.open(
+      "https://www.google.com/maps?q=36.8065,10.1815",
+      "_blank"
+    );
+  }
 </script>
 </body>
 </html>
