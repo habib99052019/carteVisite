@@ -106,17 +106,27 @@ button {
   background: #1a73e8; /* Apple call green */
 
 }
+     .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+         text-align: center;
+        }
   </style>
 </head>
 <body>
 
   <div class="card">
-    <h2>Suivez-nous !</h2>
- <p class="company-name">Performance Digitale</p>
+    <img src="https://via.placeholder.com/120" alt="Dr. Emily Carter" class="profile-img">
+
+    <h2>contactez-nous !</h2>
+ <p class="company-name">Docteur Exemple</p>
     <button class="facebook" onclick="goLink('facebook')"><i class="fab fa-facebook-f"></i> Abonnez-vous sur Facebook</button>
     <button class="instagram" onclick="goLink('instagram')"> <i class="fab fa-instagram"></i> Abonnez-vous sur Instagram</button>
     <button class="tiktok" onclick="goLink('tiktok')"><i class="fab fa-tiktok"></i> Abonnez-vous sur  TikTok</button> 
-   <button class="WhatsApp"  onclick="goLink('watshapp')"> <i class="fab fa-whatsapp"></i>  WhatsApp </button>
+   <button class="WhatsApp"  onclick="goLink('watshapp')"> <i class="fab fa-whatsapp"></i>  envoyer WhatsApp </button>
    <button class="website"  onclick="goLink('website')">     <i class="fas fa-globe"></i>
   Visiter notre site web </button>
     <button class="map" onclick="openMap()">      <i class="fa-solid fa-location-dot"></i>
